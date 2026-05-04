@@ -78,7 +78,7 @@ Solo founder, Lucid AI Labs · 🇩🇪 Germany
 
 - 🌍 [lucid-ai.app](https://lucid-ai.app)
 - 📷 [@fabi.spl](https://instagram.com/fabi.spl)
-- 📧 Fabi@speed-running-life.com
+- 📧 Fabi@lucid-ai.app
 
 ---
 
