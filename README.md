@@ -27,7 +27,7 @@ TypeScript, Python, PostgreSQL, self-hosted infrastructure. I build systems that
 
 ### Public work
 
-- **[uiverse-mcp](https://github.com/Fabi-SPL/uiverse-mcp)** · MCP server for Uiverse.io, published to npm
+- **[uiverse-mcp](https://github.com/Fabi-SPL/uiverse-mcp)** · MCP server for Uiverse.io, 3,800 components indexed and searchable from any MCP client
 - **[lucid-ride](https://github.com/Fabi-SPL/lucid-ride)** · SwiftUI iOS app, ride telemetry, distributed via AltStore PAL
 - **[lucid-health](https://github.com/Fabi-SPL/lucid-health)** · iOS app plus correlation server and a BLE bridge to a wearable
 
