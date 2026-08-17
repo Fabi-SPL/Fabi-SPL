@@ -38,7 +38,7 @@ TypeScript, Python, PostgreSQL, self-hosted infrastructure. I build systems that
 
 - **[whoop-ble-swift](https://github.com/Fabi-SPL/whoop-ble-swift)** · The BLE protocol for a WHOOP 4.0 strap, worked out from packet captures and implemented as a standalone package. Framing, CRC, command encoding, historical-record parsing. 42 tests, green CI.
 - **[lucid-health](https://github.com/Fabi-SPL/lucid-health)** · iOS app plus a correlation server and a BLE bridge to that strap. Deliberately keeps every scoring decision off the device.
-- **[lucid-ride](https://github.com/Fabi-SPL/lucid-ride)** · SwiftUI, ride telemetry joined against health data by ride window, distributed through AltStore PAL.
+- **[lucid-ride](https://github.com/Fabi-SPL/lucid-ride)** · SwiftUI, distributed through AltStore PAL. The telemetry comes off a tracker I built and bolted to the bike: a hand soldered ESP8266 and BNO085 IMU in a 3D printed enclosure I modelled around those components, logging at 25 Hz to onboard flash in its own binary format, joining my phone hotspot on the road for an NTP clock and live upload. The app joins that against health data by ride window. Firmware stays private, it is written against one board and one wiring diagram.
 
 **Python**
 
