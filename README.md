@@ -10,6 +10,7 @@ TypeScript, Python, PostgreSQL, self-hosted infrastructure. I build systems that
 - Data pipelines: scraping, extraction, validation, scheduled jobs on `pg_cron`
 - Self-hosted Postgres and Supabase: RLS, partitioning, PostGIS, pgvector
 - Native iOS apps in SwiftUI, CI/CD on GitHub Actions
+- Undocumented protocols and vendor APIs: BLE, SOAP, WebRTC, packet captures when there are no docs
 - MCP servers and LLM API integration where it solves a real problem
 
 ### Stack
@@ -27,9 +28,23 @@ TypeScript, Python, PostgreSQL, self-hosted infrastructure. I build systems that
 
 ### Public work
 
-- **[uiverse-mcp](https://github.com/Fabi-SPL/uiverse-mcp)** · MCP server for Uiverse.io, 3,800 components indexed and searchable from any MCP client
-- **[lucid-ride](https://github.com/Fabi-SPL/lucid-ride)** · SwiftUI iOS app, ride telemetry, distributed via AltStore PAL
-- **[lucid-health](https://github.com/Fabi-SPL/lucid-health)** · iOS app plus correlation server and a BLE bridge to a wearable
+**TypeScript and Node**
+
+- **[argus](https://github.com/Fabi-SPL/argus)** · One control plane over four vendor APIs that share nothing: devolo powerline on OpenWrt, NETGEAR over SOAP, Telekom Speedport on Sercomm firmware, and Tailscale over REST. A driver registry normalises them, and a `guard` layer refuses writes to protected bands before the driver is ever called. A survey of 31 comparable projects turned up none doing all four.
+- **[kontist-mcp](https://github.com/Fabi-SPL/kontist-mcp)** · Typed GraphQL layer over a German business bank. The hard part is the auth chain: the long-lived refresh token sits behind interactive consent plus an MFA push, so it has to be captured once through a local callback server and then treated as the only credential worth persisting. Transfers are deliberately not exposed.
+- **[uiverse-mcp](https://github.com/Fabi-SPL/uiverse-mcp)** · 3,800 UI components indexed and searchable from any MCP client, with a cache layer so a cold start does not hit the upstream repo.
+
+**Swift**
+
+- **[whoop-ble-swift](https://github.com/Fabi-SPL/whoop-ble-swift)** · The BLE protocol for a WHOOP 4.0 strap, worked out from packet captures and implemented as a standalone package. Framing, CRC, command encoding, historical-record parsing. 42 tests, green CI.
+- **[lucid-health](https://github.com/Fabi-SPL/lucid-health)** · iOS app plus a correlation server and a BLE bridge to that strap. Deliberately keeps every scoring decision off the device.
+- **[lucid-ride](https://github.com/Fabi-SPL/lucid-ride)** · SwiftUI, ride telemetry joined against health data by ride window, distributed through AltStore PAL.
+
+**Python**
+
+- **[remote-desktop](https://github.com/Fabi-SPL/remote-desktop)** · Screen streaming to a plain browser tab over WebRTC, with NVENC swapped in for libx264 and a NAL-aware bitstream splitter replacing one that corrupted every keyframe. Worth reading for the bug I got wrong: I wrote an RTP send pacer, measured 50 consecutive 3.2 ms sleeps consuming 756 ms of wall clock against Windows' 15.6 ms timer granularity, and deleted it. The README documents the deletion rather than hiding it.
+
+If you only open one, open **remote-desktop** for the debugging or **argus** for the architecture.
 
 Most of my work lives in private client and product repos.
 
