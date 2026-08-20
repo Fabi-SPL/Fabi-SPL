@@ -44,6 +44,12 @@ TypeScript, Python, PostgreSQL, self-hosted infrastructure. I build systems that
 
 - **[remote-desktop](https://github.com/Fabi-SPL/remote-desktop)** · Screen streaming to a plain browser tab over WebRTC, with NVENC swapped in for libx264 and a NAL-aware bitstream splitter replacing one that corrupted every keyframe. Worth reading for the bug I got wrong: I wrote an RTP send pacer, measured 50 consecutive 3.2 ms sleeps consuming 756 ms of wall clock against Windows' 15.6 ms timer granularity, and deleted it. The README documents the deletion rather than hiding it.
 
+### Writing
+
+**[findings](https://github.com/Fabi-SPL/findings)** collects seven write-ups, each as a PDF and as markdown. A sync bug where 99.3% of records were rejected on arrival and the app acknowledged the delete anyway. Four weather APIs disagreeing by 5.7 degrees on the same postcode in the same minute. Fifty 3.2 ms sleeps that consumed 756 ms because Windows rounds them up to 15.6. Three write-ups of vendors I chose, shipped, then removed, with what the removal cost.
+
+They are not opinion pieces. Every one of them ends in a number.
+
 If you only open one, open **remote-desktop** for the debugging or **argus** for the architecture.
 
 Most of my work lives in private client and product repos.
