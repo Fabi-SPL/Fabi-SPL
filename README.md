@@ -28,6 +28,10 @@ TypeScript, Python, PostgreSQL, self-hosted infrastructure. I build systems that
 
 ### Public work
 
+**Method**
+
+- **[skill-router](https://github.com/Fabi-SPL/skill-router)** · Claude Code injects every installed skill's frontmatter into the system prompt on every turn, used or not. 89 skills came to 61,533 bytes of catalog before a conversation started. Collapsing them behind 9 routers, deleting nothing, took that to 8,351. Accuracy held: 40/40 on the 103-entry catalog against 50/51 on the 12-entry one, and the single miss invoked no skill rather than a wrong one. Those numbers came out of a $255.56 benchmark whose live scorer read the wrong field for all 91 sessions, so they are scored from the saved transcripts by a script in the repo.
+
 **TypeScript and Node**
 
 - **[argus](https://github.com/Fabi-SPL/argus)** · One control plane over four vendor APIs that share nothing: devolo powerline on OpenWrt, NETGEAR over SOAP, Telekom Speedport on Sercomm firmware, and Tailscale over REST. A driver registry normalises them, and a `guard` layer refuses writes to protected bands before the driver is ever called. A survey of 31 comparable projects turned up none doing all four.
