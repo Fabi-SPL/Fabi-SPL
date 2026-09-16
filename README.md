@@ -62,4 +62,4 @@ Most of my work lives in private client and product repos.
 
 I use AI where it solves a problem. The work itself is engineering: error handling, measurement, deployment, operations.
 
-📍 Germany · 🌐 [lucidailabs.com](https://lucidailabs.com) · ✉️ Fabi@lucidailabs.com
+📍 Germany · 🌐 [keled.de](https://keled.de) · ✉️ Fabi@keled.de
